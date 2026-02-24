@@ -156,6 +156,13 @@
             padding: 0 20px;
         }
 
+        /* Fix scroll jank en iOS/Android con background-attachment: fixed */
+        @media (max-width: 1024px) {
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -371,9 +378,55 @@
             height: 250px;
             overflow: hidden;
             position: relative;
-            background-color: #000;
+            background-color: #111;
+            cursor: pointer;
         }
 
+        /* Placeholder click-to-play */
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2b2626 0%, #3E2A47 100%);
+            gap: 0.75rem;
+            transition: background 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, #3E2A47 0%, var(--primary) 100%);
+        }
+
+        .play-btn-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .video-placeholder:hover .play-btn-icon {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .play-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Video real (solo se inserta al hacer clic) */
         .video-container video {
             width: 100%;
             height: 100%;
@@ -918,7 +971,7 @@
             });
         }
 
-        // --- Generar tarjetas de videos dinámicamente ---
+        // --- Generar tarjetas de videos con click-to-play (lazy loading) ---
         function generateVideos() {
             const videoGrid = document.getElementById('videoGrid');
             
@@ -928,13 +981,35 @@
                 
                 const videoContainer = document.createElement('div');
                 videoContainer.className = 'video-container';
+                videoContainer.dataset.src = `videos/video${i}.mp4`;
                 
-                const video = document.createElement('video');
-                video.src = `videos/video${i}.mp4`;
-                video.controls = true;
-                video.preload = 'metadata';
+                // Placeholder en lugar del <video> directo
+                const placeholder = document.createElement('div');
+                placeholder.className = 'video-placeholder';
+                placeholder.innerHTML = `
+                    <div class="play-btn-icon"><i class="fas fa-play"></i></div>
+                    <span class="play-label">Video ${i}</span>
+                `;
                 
-                videoContainer.appendChild(video);
+                // Al tocar/clic, cargar el video y reproducirlo
+                videoContainer.addEventListener('click', function() {
+                    const src = this.dataset.src;
+                    if (!src) return; // ya fue cargado
+                    
+                    this.innerHTML = ''; // quitar placeholder
+                    const video = document.createElement('video');
+                    video.src = src;
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.preload = 'auto';
+                    video.style.width = '100%';
+                    video.style.height = '100%';
+                    video.style.objectFit = 'cover';
+                    this.appendChild(video);
+                    delete this.dataset.src; // marcar como cargado
+                }, { passive: true });
+                
+                videoContainer.appendChild(placeholder);
                 card.appendChild(videoContainer);
                 videoGrid.appendChild(card);
             }

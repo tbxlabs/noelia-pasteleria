@@ -324,7 +324,7 @@
             margin-top: 2rem;
         }
 
-        .load-more-btn {
+        .load-more-btn, .load-less-btn {
             display: inline-block;
             padding: 12px 40px;
             background-color: var(--primary);
@@ -335,15 +335,49 @@
             border: 2px solid var(--primary);
             cursor: pointer;
             font-size: 0.95rem;
+            margin: 0 0.5rem;
         }
 
-        .load-more-btn:hover {
+        .load-more-btn:hover, .load-less-btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
 
-        .load-more-btn.hidden {
+        .load-more-btn.hidden, .load-less-btn.hidden {
             display: none;
+        }
+
+        /* --- ESTILOS PARA VIDEOS --- */
+        .video-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-card.hidden {
+            display: none;
+        }
+
+        .video-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-color: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* --- PEDIDOS PERSONALIZADOS --- */
@@ -662,7 +696,7 @@
     <section class="menu-section" id="menu">
         <div class="container">
             <div class="section-title">
-                <span>Menú</span>
+                <span>Galería</span>
                 <h2>Pastelería Noelia</h2>
             </div>
 
@@ -675,478 +709,31 @@
             </div>
 
             <div class="menu-grid" id="menuGrid">
-                
-                <!-- Cupcakes -->
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake1.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake2.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake3.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake4.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake5.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake6.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake7.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake8.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake9.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake10.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake11.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake12.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake13.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake14.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake15.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake16.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake17.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake18.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake19.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake20.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake21.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake22.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake23.jpg" alt="Cupcake">
-                    </div>
-                </div>
-                <div class="product-card" data-category="cupcakes">
-                    <div class="product-img">
-                        <img src="imgs/cupcakes/cupcake24.jpg" alt="Cupcake">
-                    </div>
-                </div>
-
-                <!-- Pasteles -->
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel1.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel2.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel3.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel4.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel5.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel6.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel7.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel8.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel9.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel10.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel11.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel12.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel13.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel14.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel15.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel16.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel17.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel18.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel19.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel20.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel21.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel22.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel23.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel24.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel25.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel26.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel27.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel28.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel29.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel30.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel31.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel32.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel33.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel34.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel35.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel36.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel37.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel38.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel39.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel40.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel41.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel42.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel43.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel44.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel45.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel46.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel47.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel48.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel49.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel50.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel51.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel52.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel53.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel54.jpg" alt="Pastel">
-                    </div>
-                </div>
-                <div class="product-card" data-category="pasteles">
-                    <div class="product-img">
-                        <img src="imgs/pasteles/pastel55.jpg" alt="Pastel">
-                    </div>
-                </div>
-
-                <!-- Galletas -->
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas1.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas2.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas3.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas4.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas5.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas6.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas7.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas9.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas10.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas11.jpg" alt="Galletas">
-                    </div>
-                </div>
-                <div class="product-card" data-category="galletas">
-                    <div class="product-img">
-                        <img src="imgs/galletas/galletas12.jpg" alt="Galletas">
-                    </div>
-                </div>
-
-                <!-- Otros -->
-                <div class="product-card" data-category="otros">
-                    <div class="product-img">
-                        <img src="imgs/otros/otros1.jpg" alt="Otros">
-                    </div>
-                </div>
-                <div class="product-card" data-category="otros">
-                    <div class="product-img">
-                        <img src="imgs/otros/otros2.jpg" alt="Otros">
-                    </div>
-                </div>
+                <!-- Las tarjetas se generan dinámicamente con JavaScript -->
             </div>
             
             <div class="load-more-container">
-                <button class="load-more-btn" id="loadMoreBtn">Ver más productos</button>
+                <button class="load-more-btn" id="loadMoreBtn">Ver más fotos</button>
+                <button class="load-less-btn hidden" id="loadLessBtn">Ver menos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Videos -->
+    <section class="menu-section" id="videos" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <span>Videos</span>
+                <h2>Videos de Nuestros Trabajos</h2>
+            </div>
+
+            <div class="menu-grid" id="videoGrid">
+                <!-- Los videos se generan dinámicamente con JavaScript -->
+            </div>
+            
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreVideosBtn">Ver más videos</button>
+                <button class="load-less-btn hidden" id="loadLessVideosBtn">Ver menos</button>
             </div>
         </div>
     </section>
@@ -1289,9 +876,74 @@
     </a>
 
     <script>
+        // --- Configuración de productos ---
+        const productConfig = {
+            cupcakes: { count: 35, name: 'Cupcake' },
+            pasteles: { count: 143, name: 'Pastel' },
+            galletas: { count: 19, name: 'Galletas', skip: [8] },
+            otros: { count: 2, name: 'Otros' }
+        };
+
+        // --- Configuración de videos ---
+        const videoConfig = {
+            count: 27,
+            name: 'Video'
+        };
+
+        // --- Generar tarjetas de productos dinámicamente ---
+        function generateProducts() {
+            const menuGrid = document.getElementById('menuGrid');
+            
+            Object.keys(productConfig).forEach(category => {
+                const config = productConfig[category];
+                
+                for (let i = 1; i <= config.count; i++) {
+                    if (config.skip && config.skip.includes(i)) continue;
+                    
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.setAttribute('data-category', category);
+                    
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = 'product-img';
+                    
+                    const img = document.createElement('img');
+                    img.src = `imgs/${category}/${category === 'cupcakes' ? 'cupcake' : category === 'pasteles' ? 'pastel' : category}${i}.jpg`;
+                    img.alt = config.name;
+                    
+                    imgContainer.appendChild(img);
+                    card.appendChild(imgContainer);
+                    menuGrid.appendChild(card);
+                }
+            });
+        }
+
+        // --- Generar tarjetas de videos dinámicamente ---
+        function generateVideos() {
+            const videoGrid = document.getElementById('videoGrid');
+            
+            for (let i = 1; i <= videoConfig.count; i++) {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                
+                const videoContainer = document.createElement('div');
+                videoContainer.className = 'video-container';
+                
+                const video = document.createElement('video');
+                video.src = `videos/video${i}.mp4`;
+                video.controls = true;
+                video.preload = 'metadata';
+                
+                videoContainer.appendChild(video);
+                card.appendChild(videoContainer);
+                videoGrid.appendChild(card);
+            }
+        }
+
         // --- Configuración de carga progresiva ---
-        const ITEMS_PER_LOAD = 12; // Número de items a mostrar inicialmente y por cada carga
-        let currentlyShown = ITEMS_PER_LOAD;
+        const ITEMS_PER_LOAD = 12;
+        let currentlyShownProducts = ITEMS_PER_LOAD;
+        let currentlyShownVideos = ITEMS_PER_LOAD;
 
         // --- 1. Mobile Navigation Toggle ---
         const mobileToggle = document.getElementById('mobileToggle');
@@ -1315,12 +967,13 @@
             icon.classList.add('fa-bars');
         }
 
-        // --- 2. Filtro de Categorías con carga progresiva ---
+        // --- 2. Filtro de Categorías con carga progresiva (PRODUCTOS) ---
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const products = document.querySelectorAll('.product-card');
         const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const loadLessBtn = document.getElementById('loadLessBtn');
 
-        function updateVisibility() {
+        function updateProductsVisibility() {
+            const products = document.querySelectorAll('.product-card');
             const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
             let visibleCount = 0;
             let hiddenCount = 0;
@@ -1330,7 +983,7 @@
                 const shouldShow = activeFilter === 'all' || category === activeFilter;
 
                 if (shouldShow) {
-                    if (visibleCount < currentlyShown) {
+                    if (visibleCount < currentlyShownProducts) {
                         product.style.display = 'block';
                         product.classList.remove('hidden');
                         product.style.animation = 'fadeIn 0.5s ease forwards';
@@ -1346,11 +999,17 @@
                 }
             });
 
-            // Mostrar u ocultar botón "Ver más"
+            // Mostrar u ocultar botones
             if (hiddenCount > 0) {
                 loadMoreBtn.classList.remove('hidden');
             } else {
                 loadMoreBtn.classList.add('hidden');
+            }
+
+            if (currentlyShownProducts > ITEMS_PER_LOAD && visibleCount > 0) {
+                loadLessBtn.classList.remove('hidden');
+            } else {
+                loadLessBtn.classList.add('hidden');
             }
         }
 
@@ -1358,26 +1017,81 @@
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                currentlyShown = ITEMS_PER_LOAD; // Resetear contador
-                updateVisibility();
+                currentlyShownProducts = ITEMS_PER_LOAD;
+                updateProductsVisibility();
                 
-                // Scroll suave a la sección del menú
                 document.getElementById('menu').scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // --- 3. Botón "Ver más" ---
+        // --- 3. Botones "Ver más" y "Ver menos" para PRODUCTOS ---
         loadMoreBtn.addEventListener('click', () => {
-            currentlyShown += ITEMS_PER_LOAD;
-            updateVisibility();
+            currentlyShownProducts += ITEMS_PER_LOAD;
+            updateProductsVisibility();
         });
 
-        // --- 4. Inicializar visibilidad al cargar ---
+        loadLessBtn.addEventListener('click', () => {
+            currentlyShownProducts = ITEMS_PER_LOAD;
+            updateProductsVisibility();
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // --- 4. Carga progresiva para VIDEOS ---
+        const loadMoreVideosBtn = document.getElementById('loadMoreVideosBtn');
+        const loadLessVideosBtn = document.getElementById('loadLessVideosBtn');
+
+        function updateVideosVisibility() {
+            const videos = document.querySelectorAll('.video-card');
+            let visibleCount = 0;
+            let hiddenCount = 0;
+
+            videos.forEach((video, index) => {
+                if (visibleCount < currentlyShownVideos) {
+                    video.style.display = 'block';
+                    video.classList.remove('hidden');
+                    video.style.animation = 'fadeIn 0.5s ease forwards';
+                    visibleCount++;
+                } else {
+                    video.style.display = 'none';
+                    video.classList.add('hidden');
+                    hiddenCount++;
+                }
+            });
+
+            // Mostrar u ocultar botones
+            if (hiddenCount > 0) {
+                loadMoreVideosBtn.classList.remove('hidden');
+            } else {
+                loadMoreVideosBtn.classList.add('hidden');
+            }
+
+            if (currentlyShownVideos > ITEMS_PER_LOAD && visibleCount > 0) {
+                loadLessVideosBtn.classList.remove('hidden');
+            } else {
+                loadLessVideosBtn.classList.add('hidden');
+            }
+        }
+
+        loadMoreVideosBtn.addEventListener('click', () => {
+            currentlyShownVideos += ITEMS_PER_LOAD;
+            updateVideosVisibility();
+        });
+
+        loadLessVideosBtn.addEventListener('click', () => {
+            currentlyShownVideos = ITEMS_PER_LOAD;
+            updateVideosVisibility();
+            document.getElementById('videos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // --- 5. Inicializar al cargar ---
         window.addEventListener('DOMContentLoaded', () => {
-            updateVisibility();
+            generateProducts();
+            generateVideos();
+            updateProductsVisibility();
+            updateVideosVisibility();
         });
 
-        // --- 5. Scroll Reveal Simple ---
+        // --- 6. Scroll Reveal Simple ---
         const observerOptions = {
             threshold: 0.1
         };
